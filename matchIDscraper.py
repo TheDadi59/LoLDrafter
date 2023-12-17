@@ -6,7 +6,7 @@ import pandas as pd
 
 
 #Information for Riot API
-api_key = "RGAPI-e2d57c5b-f872-492d-a65b-c3752a5af6e8"
+api_key = "RGAPI-3b7e6094-2ea7-4587-8389-4ab8311fb487"
 region = "NA1"
 
 
@@ -15,18 +15,18 @@ region = "NA1"
 
 #Function to pull a single page of summoner IDs for given rank and tier
 def summ_ID_puller(division,tier,page):
-    import pandas as pd
     
     url_pull = "https://{}.api.riotgames.com/lol/league/v4/entries/RANKED_SOLO_5x5/{}/{}?page={}&api_key={}".format(region,division,tier,page,api_key)
     profile_list = requests.get(url_pull).json()
     num_profiles = len(profile_list)
+    print(profile_list)
     summID_list = []
     
-    for profile in range(0,num_profiles):
+    for profile in range(0, num_profiles):
         summID_list.append(profile_list[profile]['summonerId'])
         
-    df = pd.DataFrame(summID_list,columns = ["Summoner ID"])
-    df.to_csv('summID.csv',mode = 'a')
+    df = pd.DataFrame(summID_list, columns=["Summoner ID"])
+    df.to_csv('summID.csv', index_label="Index", mode='a')
 
 
 for tier in ["I","II","III","IV"]:
