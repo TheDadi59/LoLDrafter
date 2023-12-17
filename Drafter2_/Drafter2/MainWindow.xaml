@@ -1,0 +1,164 @@
+﻿<Window x:Class="Drafter2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LoLDrafter" Height="600" Width="920"
+        WindowStyle="None"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        AllowsTransparency="True">
+
+    <Border Background="#272537" CornerRadius="10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Menu"
+                       Foreground="White"
+                       FontSize="24"
+                       HorizontalAlignment="Left"
+                       Margin="28,16,0,4" Width="90"
+                       Grid.Column="0" Grid.Row="0"/>
+
+            <!-- Menu bar -->
+
+            <StackPanel Grid.Row="1">
+
+                <RadioButton Content="Home"
+                  Height="50"
+                  Foreground="White"
+                  FontSize="14"
+                  Style="{StaticResource MenuButtonTheme}"
+                  IsChecked="True"
+                  
+     />
+
+                <RadioButton Content="Champions Lists"
+                  Height="50"
+                  Foreground="White"
+                  FontSize="14"
+                  Style="{StaticResource MenuButtonTheme}"
+                  
+     />
+
+                <RadioButton Content="Item Lists"
+                  Height="50"
+                  Foreground="White"
+                  FontSize="14"
+                  Style="{StaticResource MenuButtonTheme}"/>
+
+                <RadioButton Content="Account"
+                  Height="50"
+                  Foreground="White"
+                  FontSize="14"
+                  Style="{StaticResource MenuButtonTheme}"/>
+
+                <RadioButton Content="Parameters"
+                  Height="50"
+                  Foreground="White"
+                  FontSize="14"
+                  Style="{StaticResource MenuButtonTheme}"/>
+
+
+            </StackPanel>
+            
+            <!-- Search bar -->
+
+            <TextBox Width="250"
+                     Height="40"
+                     VerticalContentAlignment="Center"
+                     HorizontalAlignment="Left"
+                     Margin="5"
+                     Grid.Column="1"
+                     Style="{StaticResource ModernTextBox}"/>
+            
+            
+            <StackPanel Grid.Row="1" Grid.Column="1">
+
+                <Grid Height="526" Width="718">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+
+                        <RowDefinition Height="75" />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Drafter"
+                               Foreground="White"
+                               FontSize="28"
+                               HorizontalAlignment="Left"
+                               Margin="28,16,0,4" Width="90"
+                               Grid.Column="0" Grid.Row="0"/>
+
+                    <!-- Button and TextBlock -->
+                    <StackPanel Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="70" Width="360" Grid.Row="0">
+                        <Grid Height="83" Width="361">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Button Content="Analyse" 
+                                     Height="50"
+                                     Foreground="White"
+                                     Background="#1C1B28"
+                                     FontSize="14"
+                                     HorizontalAlignment="Center" Width="148"
+                                     Grid.Column="1"
+                                     Click="OnButtonClick" Margin="0,10,0,23"/>
+                            <TextBlock x:Name="outputText" Grid.Column="0" Margin="-14,0,0,0"/>
+                        </Grid>
+
+
+                    </StackPanel>
+
+                    <TextBlock Text="Team Blue"
+                               Foreground="White"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="20" Grid.Column="0" Grid.Row="1" Height="26" Width="90"/>
+
+                    <TextBlock Text="Team Red"
+                               Foreground="White"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="20" Grid.Column="1" Grid.Row="1" Width="86" Height="26"/>
+
+                    <!-- Team 1: Input Fields -->
+                    
+
+                        <TextBox x:Name="top1" Width="180" Height="40" Grid.Row="2"  Margin="0,0,0,5"/>
+                        <TextBox x:Name="jungle1" Width="180" Height="40" Grid.Row="3"  Margin="0,0,0,5"/>
+                        <TextBox x:Name="mid1" Width="180" Height="40" Grid.Row="4"  Margin="0,0,0,5"/>
+                        <TextBox x:Name="adc1" Width="180" Height="40" Grid.Row="5"  Margin="0,0,0,5"/>
+                        <TextBox x:Name="support1" Width="180" Height="40" Grid.Row="6"  Margin="0,0,0,5"/>
+    
+    
+                    <!-- Team 2: Input Fields -->
+
+                    <TextBox x:Name="top2" Width="180" Height="40" Grid.Row="2" Grid.Column="1" Margin="0,0,0,5"/>
+                    <TextBox x:Name="jungle2" Width="180" Height="40" Grid.Row="3" Grid.Column="1" Margin="0,0,0,5"/>
+                    <TextBox x:Name="mid2" Width="180" Height="40" Grid.Row="4" Grid.Column="1" Margin="0,0,0,5"/>
+                    <TextBox x:Name="adc2" Width="180" Height="40" Grid.Row="5" Grid.Column="1" Margin="0,0,0,5"/>
+                    <TextBox x:Name="support2" Width="180" Height="40" Grid.Row="6" Grid.Column="1" Margin="0,0,0,5"/>
+
+                </Grid>
+            </StackPanel>
+
+        </Grid>
+    </Border>
+</Window>
