@@ -2,13 +2,19 @@ import asyncio
 from websockets import serve
 
 from tensorflow.keras.models import load_model
+import numpy as np
+import loldrafter
 
 rnn_model = load_model('models/rnn-model.keras')
 
 
 def process_champions(champions):
     # TODO: implement the function to process data the query received from the C# app
-    return 0
+    roles = ["TOP", "JUNGLE", "MIDDLE", "BOTTOM", "UTILITY", "TOP", "JUNGLE", "MIDDLE", "BOTTOM", "UTILITY"]
+    encoded_champions = loldrafter.encode_champions(champions)
+    encoded_roles = loldrafter.encode_roles(roles)
+    query = np.concatenate(encoded_champions, encoded_roles).reshape((1, 1, -1))
+    return query
 
 
 async def ws_handler(websocket, path):
